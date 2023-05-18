@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'open sans';
+  color: white;
+  overflow: hidden;
+}
+main {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+
+header img {
+  transition: transform 0.7s ease;
+  width: 150px;
+
+}
+header img:hover{
+  transform: scale(1.2);
+  transition: linear 0.7s;
+}
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-shadow: 2px 2px 10px black;
+  color: white;
+  transition: color 0.2s;
+}
+header nav a:hover {
+  color: black;
+  /* renk için geçiş efekti */
+  transition: all 0.3s;
+  transform: scale(1.05);
+}
+#welcome-sec {
+  background-image: url('/images/main.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.welcome-text {
+  width: 90vw;
+  margin: 200px auto;
+}
+.welcome-text h1 {
+  text-align: center;
+  font-size: 80px;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px black;
+  font-family: 'Inter';
+}
+.welcome-text p {
+  font-size: 24px;
+  max-width: 700px;
+  text-align: center;
+  margin: 90px auto;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px black;
+}
+/* 90vw 100vh 90% */
+section {
+  height: 100vh;
+  width: 100%;
+  background-color: #0a080a;
+  scroll-snap-align: start;
+}
+
+/* HAKINDA ALANI (2.KISIM) */
+#about-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  padding: 0 50px;
+}
+
+.left-side {
+  max-width: 600px;
+}
+.left-side .question {
+  text-transform: uppercase;
+}
+.left-side h1 {
+  font-size: 75px;
+  padding-bottom: 15px;
+  border-bottom: 5px solid white;
+  margin-bottom: 30px;
+  line-height: 80px;
+  text-transform: uppercase;
+  font-family: 'Poppins';
+}
+.left-side p {
+  font-family: 'Poppins';
+}
+.left-side p span {
+  border-bottom: 3px solid crimson;
+}
+
+#about-sec img {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+@media (max-width: 1100px) {
+  /* 110px genişliğin altında devreye girer */
+  #about-sec {
+    flex-direction: column;
+  }
+  #about-sec img {
+    max-width: 300px;
+  }
+  .left-side h1 {
+    font-size: 60px;
+  }
+}
+
+/* 3.KISIM */
+#battle-sec {
+  /* önce renk geçişi ardından resmi tanımladık */
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.9) 70%
+    ),
+    url('/images/sec-2.jpg');
+  background-size: cover;
+  background-position: center;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+}
+/* başlıklar */
+.heading h5 {
+  font-size: 24px;
+  text-align: center;
+}
+.heading h1 {
+  font-size: 70px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Inter';
+}
+.boxes {
+  width: 620px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5px;
+  column-gap: 2px;
+}
+.box {
+  border: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+}
+.box h2 {
+  font-family: 'poppins';
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: crimson;
+  font-weight: 600;
+}
+.box p {
+  font-size: 18px;
+  text-shadow: 2px 2px 10px black;
+}
+.boxes .box:nth-child(5) {
+  /* en altttaki elemanın iki alan kaplaması için */
+  /* https://stackoverflow.com/questions/43529806/css-grid-grid-column-span-issue */
+  /* start ve end kullanılabilir */
+  grid-column: auto / span 2;
+}
+
+/* Fikirler alanı */
+#opinions-sec {
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url(/images/sec-3.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.opinions-left {
+  max-width: 450px;
+}
+.opinions-left h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.opinions-left h1 {
+  font-size: 70px;
+}
+.opinions-left p {
+  font-family: 'poppins';
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.opinions-left button {
+  background-color: crimson;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.opinions-left button:hover {
+  background-color: #0a080a;
+  color: crimson;
+  /* geçiş efekti verebiilir (transition) */
+}
+
+/* sağ taraf */
+
+.opinios-right {
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: end;
+}
+
+.opinios-right .card:nth-child(2) {
+  /* kenidi sola hizala */
+  align-self: start;
+}
+
+.card {
+  max-width: 450px;
+  background-color: rgba(61, 61, 61, 0.566);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.person-info {
+  display: flex;
+  gap: 30px;
+}
+
+.person-info div h1 {
+  color: crimson;
+}
+.person-info div p {
+  color: gray;
+}
+
+.comment {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.comment p {
+  color: gray;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+  #opinions-sec {
+    flex-direction: column;
+  }
+  .opinions-left h1 {
+    font-size: 50px;
+  }
+  .opinions-left h3 {
+    font-size: 20px;
+  }
+  .opinions-left p {
+    font-size: 15px;
+  }
+  .card {
+    max-width: 350px;
+    padding: 10px;
+  }
+  .comment {
+    font-size: 15px;
+  }
+  .comment p {
+    font-size: 13px;
+  }
+}
